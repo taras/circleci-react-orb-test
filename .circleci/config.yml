@@ -16,6 +16,9 @@ workflows:
       - react/test:
           requires:
             - react/checkout-and-install
+      - react/coverage:
+          requires:
+            - react/checkout-and-install
   build:
     jobs:
       - react/checkout-and-install
