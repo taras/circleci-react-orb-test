@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  react: thefrontside/react@0.0.4
+  react: thefrontside/react@0.0.5
 
 workflows:
   push:
@@ -14,6 +14,9 @@ workflows:
           requires:
             - react/checkout-and-install
       - react/test:
+          requires:
+            - react/checkout-and-install
+      - react/coverage:
           requires:
             - react/checkout-and-install
   build:
